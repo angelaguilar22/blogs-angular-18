@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 /* You can add global styles to this file, and also import other style files */
 
 html,
@@ -14,7 +16,21 @@ body {
 }
 
 .sidenav {
-  width: 200px;
+  width: 250px!important; 
+  border-right: 1px solid gray!important;
+  // border-radius: 0px!important;
+
+}
+
+.content {
+  padding: 16px; /* Ajusta el padding según tus necesidades */
+}
+
+.content-container {
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .mat-toolbar.mat-primary {
@@ -23,6 +39,10 @@ body {
   z-index: 1000;
 }
 
-.content {
-  padding: 16px;
+.pa-10{
+  padding: 10px;
+}
+
+.pa-1r{
+  padding: 1rem!important;
 }

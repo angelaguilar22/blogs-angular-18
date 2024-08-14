@@ -1,6 +1,8 @@
 <mat-toolbar style="background-color: aqua">
-  <button mat-icon-button (click)="menuToggle.emit()">
-    <mat-icon fontIcon="home">menu</mat-icon>
-  </button>
-  <span>Admin Panel</span>
+  <div class="toolbar-left">
+    <span>Admin Panel</span>
+    <button mat-icon-button (click)="menuToggle.emit()">
+      <mat-icon fontIcon="menu"></mat-icon>
+    </button>
+  </div>
 </mat-toolbar>

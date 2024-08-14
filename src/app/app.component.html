@@ -1,11 +1,23 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [(opened)]="opened">
+  <mat-sidenav class="sidenav" mode="side" [opened]="opened">
+    <!-- Contenido de la barra lateral -->
     <app-sidebar></app-sidebar>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <app-toolbar (menuToggle)="drawer.toggle()"></app-toolbar>
-    <div class="content">
+    <!-- Barra superior -->
+    <mat-toolbar color="aqua" class="mat-elevation-z2">
+      <button mat-icon-button (click)="toggleSidenav()">
+        @if (opened) {
+        <mat-icon>menu_open</mat-icon>
+        } @else {
+        <mat-icon>menu</mat-icon>
+        }
+      </button>
+    </mat-toolbar>
+
+    <!-- Contenido principal -->
+    <div class="content-container">
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

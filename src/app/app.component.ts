@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  opened = false; // Añadimos esta propiedad
+  opened = true; // Añadimos esta propiedad
   title = 'Principal';
+
+  // Método para alternar el estado de 'opened'
+  toggleSidenav(): void {
+    this.opened = !this.opened;
+  }
 }
