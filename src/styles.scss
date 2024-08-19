@@ -1,7 +1,6 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 /* You can add global styles to this file, and also import other style files */
-
 html,
 body {
   height: 100%;
@@ -16,10 +15,9 @@ body {
 }
 
 .sidenav {
-  width: 250px!important; 
-  border-right: 1px solid gray!important;
+  width: 250px !important;
+  border-right: 1px solid gray !important;
   // border-radius: 0px!important;
-
 }
 
 .content {
@@ -39,10 +37,10 @@ body {
   z-index: 1000;
 }
 
-.pa-10{
+.pa-10 {
   padding: 10px;
 }
 
-.pa-1r{
-  padding: 1rem!important;
+.pa-1r {
+  padding: 1rem !important;
 }

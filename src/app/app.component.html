@@ -6,16 +6,7 @@
 
   <mat-sidenav-content>
     <!-- Barra superior -->
-    <mat-toolbar color="aqua" class="mat-elevation-z2">
-      <button mat-icon-button (click)="toggleSidenav()">
-        @if (opened) {
-        <mat-icon>menu_open</mat-icon>
-        } @else {
-        <mat-icon>menu</mat-icon>
-        }
-      </button>
-    </mat-toolbar>
-
+    <app-toolbar [opened]="opened" (menuToggle)="toggleSidenav()"></app-toolbar>
     <!-- Contenido principal -->
     <div class="content-container">
       <router-outlet></router-outlet>

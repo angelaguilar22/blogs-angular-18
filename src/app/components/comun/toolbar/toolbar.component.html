@@ -1,8 +1,9 @@
-<mat-toolbar style="background-color: aqua">
-  <div class="toolbar-left">
-    <span>Admin Panel</span>
-    <button mat-icon-button (click)="menuToggle.emit()">
-      <mat-icon fontIcon="menu"></mat-icon>
-    </button>
-  </div>
+<mat-toolbar color="primary" class="mat-elevation-z2">
+  <button mat-icon-button (click)="menuToggle.emit()">
+    @if (opened) {
+    <mat-icon>menu_open</mat-icon>
+    } @else {
+    <mat-icon>menu</mat-icon>
+    }
+  </button>
 </mat-toolbar>
