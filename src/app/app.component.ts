@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Component, inject, viewChild, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { SidebarComponent } from '@components/comun/sidebar/sidebar.component';
+import { map, Observable, shareReplay } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +13,16 @@ export class AppComponent {
   opened = true; // Añadimos esta propiedad
   title = 'Principal';
 
-  // Método para alternar el estado de 'opened'
-  toggleSidenav(): void {
-    this.opened = !this.opened;
-  }
+  private breakpointObserver = inject(BreakpointObserver);
+
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe(Breakpoints.Handset)
+    .pipe(
+      map((result) => result.matches),
+      shareReplay()
+    );
+
+  ngOnInit() {}
+
+  ngAfterViewInit() {}
 }

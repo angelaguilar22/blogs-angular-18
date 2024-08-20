@@ -23,7 +23,8 @@
 
     "baseUrl": "./",
     "paths": {
-      "@components/*": ["src/app/components/*"]
+      "@components/*": ["src/app/components/*"],
+      "@assets/*": ["src/app/assets/*"]
     }
   },
   "angularCompilerOptions": {

@@ -1,15 +1,33 @@
+<!-- <mat-drawer-container hasBackdrop="false" class="sidenav-container">
+  <mat-drawer class="sidenav" mode="side" [opened]="opened">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-toolbar [opened]="opened" (menuToggle)="toggleSidenav()"></app-toolbar>
+    <div class="content-container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container> -->
+
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav class="sidenav" mode="side" [opened]="opened">
-    <!-- Contenido de la barra lateral -->
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
     <app-sidebar></app-sidebar>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <!-- Barra superior -->
-    <app-toolbar [opened]="opened" (menuToggle)="toggleSidenav()"></app-toolbar>
-    <!-- Contenido principal -->
-    <div class="content-container">
-      <router-outlet></router-outlet>
-    </div>
+    <app-toolbar
+      [opened]="drawer.opened"
+      (menuToggle)="drawer.toggle()"
+    ></app-toolbar>
+
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

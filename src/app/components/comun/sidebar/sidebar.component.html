@@ -1,13 +1,56 @@
-<mat-nav-list class="pa-1r">
-  <mat-list-item disableRipple>
-    <span matListItemAvatar> </span>
-    <span matListItemTitle>Angel Aguilar</span>
+<mat-toolbar style="background-color: var(--mat-drawer-bg)">
+  <div style="width: inherit; display: flex; justify-content: space-between">
+    <button mat-icon-button style="color: var(--custom-accent) !important">
+      <mat-icon fontIcon="account_circle"></mat-icon>
+    </button>
+    <button mat-icon-button style="color: var(--custom-accent) !important">
+      <mat-icon fontIcon="circle_notifications"></mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div
+  style="
+    width: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+  "
+>
+  <div
+    style="width: 6rem; height: 6rem; border-radius: 50%; position: relative"
+  >
+    <img
+      src="assets/avatar.jpg"
+      style="width: 100%; height: 100%; border-radius: 50%"
+    />
+  </div>
+
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.3rem;
+    "
+  >
+    <span> Angel Aguilar </span>
+    <span style="color: #94a3b8; font-size: 12px">{{
+      "angelaguilarmartinez@gmail.com"
+    }}</span>
+  </div>
+</div>
+
+<mat-nav-list class="pa-1r" role="list" class="c-nav-list">
+  <mat-list-item routerLink="/dashboard" class="c-list-item">
+    <mat-icon matListItemIcon fontIcon="home"></mat-icon>
+    <span matListItemTitle>Dashboard</span>
   </mat-list-item>
 
-  <mat-divider class="mb-10 mat-elevation-z2"> </mat-divider>
-
   @for (menu of listMenu; track $index) {
-  <mat-list-item routerLink="{{ menu.path }}" class="mb-5">
+  <mat-list-item routerLink="{{ menu.path }}" class="c-list-item">
     <mat-icon matListItemIcon fontIcon="{{ menu.icon }}"></mat-icon>
     <span matListItemTitle>{{ menu.title }}</span>
   </mat-list-item>
