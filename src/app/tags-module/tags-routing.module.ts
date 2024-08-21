@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BuscarComponent as BuscarCategoriasComponent } from '@components/categorias/buscar/buscar.component';
+import { BuscarComponent } from './pages/buscar/buscar.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: BuscarCategoriasComponent,
+    component: BuscarComponent,
   },
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CategoryRoutingModule {}
+export class TagsRoutingModule {}

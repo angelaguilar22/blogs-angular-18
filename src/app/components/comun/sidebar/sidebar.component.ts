@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   listMenu = [
     {
-      path: '/users',
-      title: 'Usuarios',
-      icon: 'person',
+      path: '/tags',
+      title: 'Etiquetas',
+      icon: 'sell',
     },
     {
       path: '/category',
@@ -17,9 +17,9 @@ export class SidebarComponent {
       icon: 'category',
     },
     {
-      path: '/tags',
-      title: 'Etiquetas',
-      icon: 'sell',
+      path: '/users',
+      title: 'Usuarios',
+      icon: 'person',
     },
   ];
 }

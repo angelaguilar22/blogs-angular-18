@@ -8,6 +8,12 @@ import { MatDivider } from '@angular/material/divider';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 
 const materialComponents = [
   MatSidenavModule,
@@ -16,16 +22,15 @@ const materialComponents = [
   MatIconModule,
   MatListModule,
   MatDivider,
-  MatToolbarModule,
-  MatButtonModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
   MatGridListModule,
   MatCardModule,
   MatMenuModule,
-  MatIconModule,
-  MatButtonModule,
+  MatTableModule,
+  MatInputModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatSortModule,
+  MatPaginatorModule,
 ];
 
 @NgModule({

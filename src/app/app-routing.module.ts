@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BuscarComponent as BuscarEtiquetasComponent } from '@components/etiquetas/buscar/buscar.component';
-import { BuscarComponent as BuscarUsuariosComponent } from '@components/usuario/buscar/buscar.component';
-import { MaterialModule } from './material/material.module';
 import { DashboardComponent } from '@components/dashboard/dashboard.component';
 
 const routes: Routes = [
@@ -13,17 +10,19 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: () =>
-      import('@components/categorias/category/category.module').then(
+      import('src/app/category-module/category.module').then(
         (m) => m.CategoryModule
       ),
   },
   {
     path: 'tags',
-    component: BuscarEtiquetasComponent,
+    loadChildren: () =>
+      import('src/app/tags-module/tags.module').then((m) => m.TagsModule),
   },
   {
     path: 'users',
-    component: BuscarUsuariosComponent,
+    loadChildren: () =>
+      import('src/app/users-module/user.module').then((m) => m.UserModule),
   },
 ];
 
