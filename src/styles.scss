@@ -1,11 +1,16 @@
 @use "@angular/material" as mat;
+@use "../src/app/m3-theme.scss";
 
-/* You can add global styles to this file, and also import other style files */
+@include mat.core();
+
 html,
 body {
   height: 100%;
   --mat-drawer-bg: #0f172a;
   --custom-accent: #94a3b8;
+
+  // @include mat.core-theme(m3-theme.$light-theme);
+  // @include mat.button-theme(m3-theme.$light-theme);
 }
 
 body {
@@ -60,11 +65,11 @@ body {
   gap: 16px;
 }
 
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+// .mat-toolbar.mat-primary {
+//   position: sticky;
+//   top: 0;
+//   z-index: 1000;
+// }
 
 .pa-10 {
   padding: 10px;
