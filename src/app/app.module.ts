@@ -7,8 +7,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { ToolbarComponent } from './components/comun/toolbar/toolbar.component';
 import { SidebarComponent } from './components/comun/sidebar/sidebar.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@shared/material/material.module';
+import { ConfirDialogComponent } from './components/comun/confir-dialog/confir-dialog.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,11 @@ import { MaterialModule } from '@shared/material/material.module';
     ToolbarComponent,
     SidebarComponent,
     DashboardComponent,
+    ConfirDialogComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MaterialModule,
-    ReactiveFormsModule, // TODO: quizas mover a un sharedModule
-  ],
-  providers: [provideAnimationsAsync()],
+  imports: [BrowserModule, AppRoutingModule, MaterialModule],
+  providers: [provideAnimationsAsync(), provideHttpClient()],
   bootstrap: [AppComponent],
+  exports: [],
 })
 export class AppModule {}

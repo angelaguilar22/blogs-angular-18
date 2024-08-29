@@ -1,4 +1,52 @@
 <div class="grid-container">
-  <h1>Tabla de Etiquetas</h1>
-  <app-grid-tag></app-grid-tag>
+  <div style="display: flex; justify-content: space-between">
+    <h3>Tabla de Etiquetas</h3>
+
+    <button mat-stroked-button color="primary">
+      <mat-icon fontIcon="add"></mat-icon>
+      Agregar
+    </button>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap">
+    @for (item of tags; track $index) {
+    <mat-card
+      class="dashboard-card"
+      style="width: 20rem; flex-direction: column; margin: 16px"
+    >
+      <img
+        src="assets/avatar.jpg"
+        style="
+          width: 100%;
+          height: 100%;
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+        "
+      />
+
+      <mat-card-header>
+        <mat-card-title>
+          {{ item.title }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="dashboard-card-content">
+        <div>Card Content Here</div>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button mat-button color="primary">Editar</button>
+        <button mat-button color="warn" (click)="showConfirmationDialog(item)">
+          Eliminar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    }
+  </div>
+
+  <mat-paginator
+    [length]="110"
+    [pageSize]="10"
+    [pageSizeOptions]="[10, 20, 30]"
+    aria-label="Selecciona pagina"
+  ></mat-paginator>
 </div>

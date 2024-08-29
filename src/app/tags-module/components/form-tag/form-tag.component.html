@@ -1,0 +1,17 @@
+<form [formGroup]="formTag">
+  <mat-form-field>
+    <mat-label>Titulo</mat-label>
+    <input matInput formControlName="title" placeholder="Titulo" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Descripción</mat-label>
+
+    <textarea
+      matInput
+      formControlName="description"
+      placeholder="Description"
+    ></textarea>
+  </mat-form-field>
+  <button type="submit">Submit</button>
+</form>
